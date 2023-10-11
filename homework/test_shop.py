@@ -93,6 +93,9 @@ class TestCart:
 
     def test_cart_clear(self, cart, product):
         cart.add_product(product, 3)
+        cart.clear()
+
+        assert not cart.products
 
     def test_cart_get_total_price(self, cart, product, another_product):
         cart.add_product(product, 3)

@@ -66,10 +66,11 @@ class Cart:
         """
         if product not in self.products:
             raise ValueError
-        elif not remove_count or remove_count >= self.products[product]:
+        elif remove_count is None or remove_count >= self.products[product]:
             del self.products[product]
         else:
             self.products[product] -= remove_count
+
 
     def clear(self):
         self.products.clear()
